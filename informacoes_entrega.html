@@ -237,11 +237,16 @@ async function validarCampos(){
   }
 }
 
+   // Sidebar
+  function toggleSidebar() { document.getElementById('sidebar').classList.toggle('-translate-x-full'); }
+  function toggleSubmenu(id) { document.getElementById(id).classList.toggle('hidden'); }
+
 inputs.forEach(i => i.addEventListener('input', validarCampos));
 </script>
 
 </body>
 </html>
+
 
 
 
