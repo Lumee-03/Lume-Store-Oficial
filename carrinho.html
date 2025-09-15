@@ -217,8 +217,14 @@ document.getElementById('checkout-btn').addEventListener('click', () => {
   window.onload = function() {
     renderCart();
   }
+
+ // Sidebar
+  function toggleSidebar() { document.getElementById('sidebar').classList.toggle('-translate-x-full'); }
+  function toggleSubmenu(id) { document.getElementById(id).classList.toggle('hidden'); }
+  
 </script>
 
 </body>
 </html>
+
 
