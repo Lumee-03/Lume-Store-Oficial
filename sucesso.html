@@ -1,9 +1,20 @@
-<!-- sucesso.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head><meta charset="UTF-8"><title>Obrigado!</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>Compra Aprovada</title>
+</head>
 <body>
-  <h1>Compra aprovada! Obrigado!</h1>
-  <a href="index.html">Voltar para a loja</a>
+  <h1>🎉 Obrigado pela sua compra!</h1>
+  <p>Seu pagamento foi aprovado com sucesso.</p>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get("collection_status");
+    const paymentId = urlParams.get("payment_id");
+
+    console.log("Status:", status);
+    console.log("Pagamento ID:", paymentId);
+  </script>
 </body>
 </html>
