@@ -158,10 +158,10 @@ async function gerarLinkPagamento(){
         }
       },
       back_urls: {
-        success: "index.html",
-        failure: "index.html",
-        pending: "index.html"
-      },
+  success: "https://seu-usuario.github.io/lume-loja/sucesso.html",
+  failure: "https://seu-usuario.github.io/lume-loja/erro.html",
+  pending: "https://seu-usuario.github.io/lume-loja/pendente.html"
+},
       auto_return: "approved"
     })
   });
@@ -195,4 +195,5 @@ inputs.forEach(i => i.addEventListener('input', validarCampos));
 
 </body>
 </html>
+
 
