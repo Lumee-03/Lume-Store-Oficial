@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lume</title>
+  <title>Carrinho - Lume</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -11,77 +11,27 @@
   <!-- Cabeçalho -->
   <header class="w-full shadow-md">
     <div class="flex items-center justify-between px-6 py-4">
-      <!-- Logo -->
       <div class="text-2xl font-bold text-pink-500">Lume</div>
-
-      <!-- Barra de pesquisa -->
       <div class="flex-1 mx-6">
-        <input 
-          type="text" 
-          placeholder="Buscar produtos..." 
-          class="w-full border rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
-        >
+        <input type="text" placeholder="Buscar produtos..." class="w-full border rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
       </div>
-
-      <!-- Atendimento e Carrinho com contador -->
       <div class="flex items-center space-x-6 text-gray-600">
-        <a href="#" class="flex items-center gap-1 hover:text-pink-500 transition">
-          <!-- Atendimento -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 11-12.728 0M12 3v4m0 10v4m-6-6h4m10 0h-4"/>
-          </svg>
-          Atendimento
-        </a>
-
+        <a href="#" class="flex items-center gap-1 hover:text-pink-500 transition">Atendimento</a>
         <a href="carrinho.html" class="relative flex items-center gap-1 hover:text-pink-500 transition">
-          <!-- Carrinho -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 7h13l-1.5-7M7 13h10M10 21a1 1 0 11-2 0 1 1 0 012 0zm8 0a1 1 0 11-2 0 1 1 0 012 0z"/>
-          </svg>
-          <span id="cart-count" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
           Carrinho
+          <span id="cart-count" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
         </a>
       </div>
     </div>
-
-    <!-- Menu -->
     <nav class="flex justify-center space-x-6 bg-pink-50 py-3 text-gray-700 font-medium">
-      <button onclick="toggleSidebar()" class="hover:text-pink-500 transition font-semibold">Ver Tudo</button>
       <a href="index.html" class="hover:text-pink-500 transition">Início</a>
-      <a href="cabelo.html" class="hover:text-pink-500 transition">Cabelos</a>
-      <a href="maquiagem.html" class="hover:text-pink-500 transition">Maquiagens</a>
+      <a href="#" class="hover:text-pink-500 transition">Cabelos</a>
+      <a href="#" class="hover:text-pink-500 transition">Maquiagens</a>
       <a href="perfumes.html" class="hover:text-pink-500 transition">Perfumes</a>
-      <a href="skincare.html" class="hover:text-pink-500 transition">Skincare</a>
+      <a href="#" class="hover:text-pink-500 transition">Skincare</a>
     </nav>
   </header>
 
-  <!-- Sidebar Lateral -->
-  <div id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
-    <div class="flex justify-between items-center px-4 py-4 border-b">
-      <span class="font-bold text-lg">Menu Completo</span>
-      <button onclick="toggleSidebar()" class="text-gray-600 hover:text-pink-500">&times;</button>
-    </div>
-    <ul class="p-4 space-y-2">
-      <li>
-        <button class="w-full text-left font-medium hover:text-pink-500" onclick="toggleSubmenu('cabelos')">Cabelos</button>
-        <ul id="cabelos" class="pl-4 mt-2 hidden space-y-1 text-gray-600">
-          <li><a href="shampoo.html" class="hover:text-pink-500">Shampoos</a></li>
-          <li><a href="condicionador.html" class="hover:text-pink-500">Condicionadores</a></li>
-          <li><a href="mascara.html" class="hover:text-pink-500">Máscaras</a></li>
-        </ul>
-      </li>
-      <li>
-        <button class="w-full text-left font-medium hover:text-pink-500" onclick="toggleSubmenu('maquiagens')">Maquiagens</button>
-        <ul id="maquiagens" class="pl-4 mt-2 hidden space-y-1 text-gray-600">
-          <li><a href="batom.html" class="hover:text-pink-500">Batom</a></li>
-          <li><a href="base.html" class="hover:text-pink-500">Base</a></li>
-          <li><a href="sombra.html" class="hover:text-pink-500">Sombras</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-  
   <!-- Conteúdo do carrinho -->
   <main class="max-w-3xl mx-auto px-6 py-12">
     <h2 class="text-2xl font-bold text-gray-800 mb-6">Seu Carrinho</h2>
@@ -217,14 +167,7 @@ document.getElementById('checkout-btn').addEventListener('click', () => {
   window.onload = function() {
     renderCart();
   }
-
- // Sidebar
-  function toggleSidebar() { document.getElementById('sidebar').classList.toggle('-translate-x-full'); }
-  function toggleSubmenu(id) { document.getElementById(id).classList.toggle('hidden'); }
-  
 </script>
 
 </body>
 </html>
-
-
