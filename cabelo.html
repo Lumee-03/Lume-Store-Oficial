@@ -306,19 +306,30 @@
     document.getElementById('cart-count').innerText = totalQuantity;
   }
 
-  function addToCart(name, price, redirectToCart) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const index = cart.findIndex(item => item.name === name);
-    if (index > -1) {
-      cart[index].quantity += 1;
-    } else {
-      cart.push({ name, price, quantity: 1 });
-    }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartCount();
-    alert(`${name} adicionado ao carrinho!`);
-    if (redirectToCart) window.location.href = "carrinho.html";
+  function addToCart(name, description, price, image, redirectToCart) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const index = cart.findIndex(item => item.name === name);
+
+  if (index > -1) {
+    cart[index].quantity += 1;
+  } else {
+    cart.push({
+      name,
+      description,
+      price,
+      image,
+      quantity: 1
+    });
   }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
+  alert(`${name} adicionado ao carrinho!`);
+  
+  if (redirectToCart) {
+    window.location.href = "carrinho.html";
+  }
+}
 
   // Inicializa contador
   window.onload = function() {
